@@ -5,9 +5,7 @@ date:   2017-08-01 08:17:00 +0000
 categories: ruby-on-rails
 ---
 
-# Creating a Ruby on Rails app with RVM on Ubuntu
-
-I wrote this step-by-step to help me remember it for next time I start an app.
+I wrote this step-by-step to help me remember it next time I create an app.
 
 It's my first time experimenting with Rails. I wanted to use a virtual environment from the start because that's how I learned Python-Django too, and to not be afraid of setting things up.
 
