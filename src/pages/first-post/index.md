@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "First Free Code Camp Project"
-date:   2017-07-06 12:52:50 +0000
-categories: frontend freecodecamp 
+date:   "2017-07-06"
+categories: frontend freecodecamp
 ---
 
 # My first Free Code Camp project
@@ -26,4 +26,3 @@ What I learned:
 + In the beginning, there are so many variables that it's easy to want to throw everything away and give up. When I accepted it wouldn't look good the first time, and focused on fulfilling the user stories, I managed to get it over with and move on.
 + When I came back to it later, it took a few minutes to make great improvements, because I wasn't worried about going to the next project and had learned more about the tools. It's easier to work separating the phases: first get it done, then come back and make it good.
 + I should have made a copy of the first version to have it for show... Next time I'll do it.
-

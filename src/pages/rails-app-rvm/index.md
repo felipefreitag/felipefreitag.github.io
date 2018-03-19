@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Creating a Ruby on Rails app with RVM on Ubuntu"
-date:   2017-08-01 08:17:00 +0000
+date:   "2017-08-01"
 categories: ruby-on-rails
 ---
 
