@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-blog",
-  "description": "Starter Gatsby Blog",
+  "name": "felipe-freitag-blog",
+  "description": "Felipe Freitag Blog",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Felipe Freitag <ffvargas@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },
@@ -35,7 +35,7 @@
     "gh-pages": "^1.1.0",
     "prettier": "^1.11.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://felipefreitag.github.io",
   "keywords": [
     "gatsby"
   ],
@@ -43,7 +43,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/felipefreitag/felipefreitag.github.io.git"
   },
   "scripts": {
     "dev": "gatsby develop",
