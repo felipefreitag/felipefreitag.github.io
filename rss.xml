@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Felipe Freitag Blog]]></title><description><![CDATA[A coder who draws.]]></description><link>https://felipefreitag.github.io/</link><generator>RSS for Node</generator><lastBuildDate>Tue, 20 Mar 2018 21:12:14 GMT</lastBuildDate><item><title><![CDATA[Creating a Ruby on Rails app with RVM on Ubuntu]]></title><description><![CDATA[I wrote this step-by-step to help me remember it next time I create an app. It’s my first time experimenting with Rails. I wanted to use a…]]></description><link>https://felipefreitag.github.io//rails-app-rvm/</link><guid isPermaLink="false">https://felipefreitag.github.io//rails-app-rvm/</guid><pubDate>Tue, 01 Aug 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I wrote this step-by-step to help me remember it next time I create an app.&lt;/p&gt;
+&lt;p&gt;It’s my first time experimenting with Rails. I wanted to use a virtual environment from the start because that’s how I learned Python-Django too, and to not be afraid of setting things up.&lt;/p&gt;
+&lt;p&gt;This guide might grow as I learn more details of the process. For example, at this point I’m not sure how updates to the system Ruby version would affect the project.&lt;/p&gt;
+&lt;p&gt;I’m using Ubuntu 16.10.&lt;/p&gt;
+&lt;h3&gt;Install Ruby&lt;/h3&gt;
+&lt;h3&gt;Install rvm&lt;/h3&gt;
+&lt;h3&gt;Create virtual environment&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ rvm gemset create &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;Activate virtual environment&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ rvm @&amp;lt;name&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;Check which one is being used&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ rvm gemset list
+
+gemsets for ruby-2.4.0 (found in /home/felipe/.rvm/gems/ruby-2.4.0)
+   (default)
+   global
+=&amp;gt; learn_rails&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;Install rails&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ gem install rails&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2&gt;Check rails&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ rails --version
+
+Rails 5.1.X&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;Create new app&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ rails new blog
+$ cd blog&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;Run server&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ bin/rails server&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h6&gt;I got an error:&lt;/h6&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;@learn_rails/gems/bundler-1.15.3/lib/bundler/runtime.rb:85:in `rescue in block (2 levels) in require&amp;#39;: There was an error while trying to load the gem &amp;#39;uglifier&amp;#39;. (Bundler::GemRequireError)&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;A JS runtime was missing. So I went to blog/Gemfile and uncommented line 20:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;gem &lt;span class=&quot;token string&quot;&gt;&apos;therubyracer&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; platforms&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token symbol&quot;&gt;:ruby&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Then installed the new gem.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ bundle install
+Bundle complete! 17 Gemfile dependencies, 73 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Now the server ran fine:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ bin/rails server&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Browse to: &lt;a href=&quot;http://localhost:3000&quot;&gt;http://localhost:3000&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;All set!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Creating a portfolio page]]></title><description><![CDATA[Creating a portfolio page The second basic frontend project at  freecodecamp  was to create a simple portfolio page. I didn’t even know how…]]></description><link>https://felipefreitag.github.io//portfolio-page/</link><guid isPermaLink="false">https://felipefreitag.github.io//portfolio-page/</guid><pubDate>Fri, 28 Jul 2017 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Creating a portfolio page&lt;/h1&gt;
+&lt;p&gt;The second basic frontend project at &lt;a href=&quot;https://www.freecodecamp.com&quot;&gt;freecodecamp&lt;/a&gt; was to create a simple portfolio page.&lt;/p&gt;
+&lt;p&gt;I didn’t even know how to make a responsive page! This time I saved the first version to remember it:&lt;/p&gt;
+&lt;p data-height=&quot;370&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;YxyWOJ&quot; data-default-tab=&quot;result&quot; data-user=&quot;felipefreitag&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Portfolio Challenge - FCC - first version&quot; class=&quot;codepen&quot;&gt; See the Pen &lt;a href=&quot;https://codepen.io/felipefreitag/pen/YxyWOJ/&quot;&gt; Portfolio Challenge - FCC - first version&lt;/a&gt; by Felipe Freitag Vargas (&lt;a href=&quot;https://codepen.io/felipefreitag&quot;&gt;@felipefreitag&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt; &lt;/script&gt;
+&lt;p&gt;And here is the one I’ll keep working on as my experience and portfolio grow:&lt;/p&gt;
+&lt;p data-height=&quot;370&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;PmebRo&quot; data-default-tab=&quot;result&quot; data-user=&quot;felipefreitag&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Portfolio Challenge - FCCamp&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;https://codepen.io/felipefreitag/pen/PmebRo/&quot;&gt;Portfolio Challenge - FCCamp &lt;/a&gt; by Felipe Freitag Vargas (&lt;a href=&quot;https://codepen.io/felipefreitag&quot;&gt;@felipefreitag&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt; &lt;/script&gt;</content:encoded></item><item><title><![CDATA[First Free Code Camp Project]]></title><description><![CDATA[My first Free Code Camp project I started learning Front End with  Free Code Camp . I tried other learning resources before that, but their…]]></description><link>https://felipefreitag.github.io//first-post/</link><guid isPermaLink="false">https://felipefreitag.github.io//first-post/</guid><pubDate>Thu, 06 Jul 2017 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;My first Free Code Camp project&lt;/h1&gt;
+&lt;p&gt;I started learning Front End with &lt;a href=&quot;https://www.freecodecamp.com&quot;&gt;Free Code Camp&lt;/a&gt;. I tried other learning resources before that, but their challenge-oriented style suited me well.&lt;/p&gt;
+&lt;p&gt;The first challenges were very straightforward, basic HTML and CSS code snippets. Then the first project came.&lt;/p&gt;
+&lt;p&gt;First project: Build a tribute page fulfilling these two user stories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;User Story: I can view a tribute page with an image and text.&lt;/li&gt;
+&lt;li&gt;User Story: I can click on a link that will take me to an external website with further information on the topic.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cool, I also learned what “user stories” meant! ;)&lt;/p&gt;
+&lt;p&gt;It took me a few hours to get going with CSS and Bootstrap. To be honest I wanted to finish the challenge quickly to go to the next one and didn’t have much patience to learn step by step. After some frustrations it didn’t look great but it was done. One month later, I had already done a freelance project and had more experience, which I used to update the page and make it look better. Here it is:&lt;/p&gt;
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;oWqMRY&quot; data-default-tab=&quot;result&quot; data-user=&quot;felipefreitag&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Free Code Camp Project #1&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;https://codepen.io/felipefreitag/pen/oWqMRY/&quot;&gt;Free Code Camp Project #1&lt;/a&gt; by Felipe Freitag Vargas (&lt;a href=&quot;https://codepen.io/felipefreitag&quot;&gt;@felipefreitag&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;async&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt; &lt;/script&gt;
+&lt;p&gt;What I learned:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In the beginning, there are so many variables that it’s easy to want to throw everything away and give up. When I accepted it wouldn’t look good the first time, and focused on fulfilling the user stories, I managed to get it over with and move on.&lt;/li&gt;
+&lt;li&gt;When I came back to it later, it took a few minutes to make great improvements, because I wasn’t worried about going to the next project and had learned more about the tools. It’s easier to work separating the phases: first get it done, then come back and make it good.&lt;/li&gt;
+&lt;li&gt;I should have made a copy of the first version to have it for show… Next time I’ll do it.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Random quote machine]]></title><description><![CDATA[Random Quote Machine This Free Code Camp challenge has the following instructions: Build a Random Quote Machine Objective: Build a CodePen…]]></description><link>https://felipefreitag.github.io//quote-machine/</link><guid isPermaLink="false">https://felipefreitag.github.io//quote-machine/</guid><pubDate>Fri, 28 Jul 2017 03:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Random Quote Machine&lt;/h1&gt;
+&lt;p&gt;This Free Code Camp challenge has the following instructions:&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Build a Random Quote Machine&lt;/p&gt;
+&lt;p&gt;Objective: Build a CodePen.io app that is functionally similar to this: &lt;a href=&quot;https://codepen.io/FreeCodeCamp/full/ONjoLe/&quot;&gt;https://codepen.io/FreeCodeCamp/full/ONjoLe/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;User Story: I can click a button to show me a new random quote.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;User Story: I can press a button to tweet out a quote.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;It was my first experience using Javascript. I didn’t even know what Jquery was!&lt;/p&gt;
+&lt;p&gt;Getting the API to work on Codepen wasn’t that easy, I had to learn about cross-domain reference that Jquery kept complaining about. In later projects I found a workaround, but in this one I ended up using an Ajax call.&lt;/p&gt;
+&lt;p&gt;The Twitter function came from their website, I copied it and fiddled with it a little bit.&lt;/p&gt;
+&lt;p&gt;I used Bootstrap 4 and really liked the Card class, it’s present in many other projects after this one.&lt;/p&gt;
+&lt;p&gt;Today, I’d refactor it to remove the global variable and function. And also to truncate the quote when clicking the Twitter button - if the quote is longer than 140 characters the user will have to edit it by hand.&lt;/p&gt;
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;mmzeoZ&quot; data-default-tab=&quot;result&quot; data-user=&quot;felipefreitag&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Random Quote Machine - Free Code Camp&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;https://codepen.io/felipefreitag/pen/mmzeoZ/&quot;&gt;Random Quote Machine - Free Code Camp&lt;/a&gt; by Felipe Freitag Vargas (&lt;a href=&quot;https://codepen.io/felipefreitag&quot;&gt;@felipefreitag&lt;/a&gt;) on &lt;a href=&quot;https://codepen.io&quot;&gt;CodePen&lt;/a&gt;. &lt;/p&gt;
+&lt;script  src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt; &lt;/script&gt;</content:encoded></item></channel></rss>

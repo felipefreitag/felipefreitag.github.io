@@ -1,0 +1,60 @@
+{
+  "assetsByChunkName": {
+    "component---src-pages-index-js": [
+      "component---src-pages-index-js-e152fefbfff4d2ade088.js",
+      "component---src-pages-index-js-e152fefbfff4d2ade088.js.map"
+    ],
+    "path---rails-app-rvm": [
+      "path---rails-app-rvm-aa3f69147313098d1ae5.js",
+      "path---rails-app-rvm-aa3f69147313098d1ae5.js.map"
+    ],
+    "path---quote-machine": [
+      "path---quote-machine-ce7bc7aaf9d921a5d8c3.js",
+      "path---quote-machine-ce7bc7aaf9d921a5d8c3.js.map"
+    ],
+    "path---": [
+      "path----557518bd178906f8d58a.js",
+      "path----557518bd178906f8d58a.js.map"
+    ],
+    "path---first-post": [
+      "path---first-post-1ab9f3db3dca347bd89f.js",
+      "path---first-post-1ab9f3db3dca347bd89f.js.map"
+    ],
+    "component---node-modules-gatsby-plugin-offline-app-shell-js": [
+      "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js",
+      "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js.map"
+    ],
+    "component---src-templates-blog-post-js": [
+      "component---src-templates-blog-post-js-29977e122b730f620ffe.js",
+      "component---src-templates-blog-post-js-29977e122b730f620ffe.js.map"
+    ],
+    "component---src-layouts-index-js": [
+      "component---src-layouts-index-js-bbd50a7b852d82de6526.js",
+      "component---src-layouts-index-js-bbd50a7b852d82de6526.js.map"
+    ],
+    "path---index": [
+      "path---index-065f08183d059c9bc17e.js",
+      "path---index-065f08183d059c9bc17e.js.map"
+    ],
+    "commons": [
+      "commons-c3b9f75578a3021e3093.js",
+      "build-js-styles.css",
+      "commons-c3b9f75578a3021e3093.js.map",
+      "build-js-styles.css.map"
+    ],
+    "path---offline-plugin-app-shell-fallback": [
+      "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js",
+      "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---portfolio-page": [
+      "path---portfolio-page-e701d30a9bac88868869.js",
+      "path---portfolio-page-e701d30a9bac88868869.js.map"
+    ],
+    "app": [
+      "app-75f48bb5a61d7008cc9f.js",
+      "build-js-styles.css",
+      "app-75f48bb5a61d7008cc9f.js.map",
+      "build-js-styles.css.map"
+    ]
+  }
+}
